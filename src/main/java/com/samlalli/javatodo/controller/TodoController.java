@@ -27,4 +27,15 @@ public class TodoController {
         return TodoItemRepo.save(todoItem);
 
     }
+
+    @PutMapping
+    public TodoItem update(
+            @Validated @NotNull @RequestBody TodoItem todoItem){
+        return TodoItemRepo.save(todoItem);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void delete(@PathVariable Long id){
+        TodoItemRepo.deleteById(id);
+    }
 }
